@@ -1,0 +1,9 @@
+services:
+  streamlit-app:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount the current directory into the container for live updates (optional in production)
+      - .:/usr/local/src/app
+    command: streamlit run main.py --server.port=8501 --server.address=0.0.0.0
