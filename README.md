@@ -1,5 +1,7 @@
 Inspired by https://github.com/techwithtim/AI-Web-Scraper/tree/main
 
+`Note`: **If you don't have access to BrighData services, you'll not be able to use this app.**
+
 Added RAG to speed up the parsing process.
 
 ## Setup
