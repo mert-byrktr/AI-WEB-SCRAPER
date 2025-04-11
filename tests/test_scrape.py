@@ -5,11 +5,10 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
-
 import time
 import pytest
 from unittest.mock import patch, MagicMock
-from scrape import (
+from web_scrape.scrape import (
     scrape_website,
     extract_body_content,
     clean_body_content,
@@ -57,8 +56,8 @@ def test_split_dom_content():
     assert chunks[0] == "a" * 6000
     assert chunks[1] == "a" * 4000
 
-@patch('scrape.Remote')
-@patch('scrape.ChromiumRemoteConnection')
+@patch('web_scrape.scrape.Remote')
+@patch('web_scrape.scrape.ChromiumRemoteConnection')
 def test_scrape_website(mock_connection, mock_remote):
     # Prepare a dummy driver to simulate Selenium's Remote driver.
     dummy_driver = MagicMock()
