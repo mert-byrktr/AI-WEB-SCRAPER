@@ -1,14 +1,17 @@
 # test_parse.py
-import sys
 import os
+import sys
 
 # Insert the parent directory (project root) into sys.path so that modules in web_scrape can be imported.
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
-from web_scrape.parse import ParseWithOllama
 from langchain_core.documents import Document
+
+from web_scrape.parse import ParseWithOllama
+
 
 def test_format_docs():
     parser = ParseWithOllama()

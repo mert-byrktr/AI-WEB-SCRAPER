@@ -1,11 +1,8 @@
 import streamlit as st
-from web_scrape.scrape import (
-    scrape_website,
-    extract_body_content,
-    clean_body_content,
-    split_dom_content,
-)
+
 from web_scrape.parse import ParseWithOllama
+from web_scrape.scrape import (clean_body_content, extract_body_content,
+                               scrape_website, split_dom_content)
 
 ollama_model = ParseWithOllama()
 

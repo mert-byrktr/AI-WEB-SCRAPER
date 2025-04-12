@@ -1,20 +1,19 @@
 # test_scrape.py
-import sys
 import os
+import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 import time
+from unittest.mock import MagicMock, patch
+
 import pytest
-from unittest.mock import patch, MagicMock
-from web_scrape.scrape import (
-    scrape_website,
-    extract_body_content,
-    clean_body_content,
-    split_dom_content
-)
 from bs4 import BeautifulSoup
+
+from web_scrape.scrape import (clean_body_content, extract_body_content,
+                               scrape_website, split_dom_content)
+
 
 def test_extract_body_content():
     # Test with HTML that includes a <body> tag.

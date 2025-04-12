@@ -1,11 +1,12 @@
-from selenium.webdriver import Remote, ChromeOptions
-from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnection
-from selenium.common.exceptions import WebDriverException
-
+import os
 import time
+
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
-import os
+from selenium.common.exceptions import WebDriverException
+from selenium.webdriver import ChromeOptions, Remote
+from selenium.webdriver.chromium.remote_connection import \
+    ChromiumRemoteConnection
 
 load_dotenv("sample.env")
 
